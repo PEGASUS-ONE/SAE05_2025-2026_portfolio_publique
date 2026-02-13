@@ -1,3 +1,0 @@
-Pour utiliser un fichier avec l'extension .gan, j'ai utilisé l'application GanttProject, disponible sur ce lien : https://www.ganttproject.biz/
-
-Il vous permettra d'ouvrir le fichier fourni et de mieux voir les noms des tâches disponibles.

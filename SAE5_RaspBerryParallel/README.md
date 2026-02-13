@@ -1,3 +1,0 @@
-# SAE5_RaspBerryParallel
-
-
