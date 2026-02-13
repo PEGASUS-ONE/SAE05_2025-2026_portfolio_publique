@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription</title>
+    <link rel="stylesheet" href="Style/style.css" />
+</head>
+
+
+<header>
+    <a href="accueil.html" class="logo">
+        <img src="Images/Logo/Logo.png" alt="Logo ClusterMania">
+        <span>ClusterMania</span>
+    </a>
+</header>
+
+<div class="form-container">
+    <div class="form-box">
+        <h1>Inscription</h1>
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+
+
+            <label for="mdp">Mot de passe</label>
+            <input type="password"  id="mdp" required />
+
+
+            <label for="mdp2">Confirmer le mot de passe</label>
+            <input type="password" id="mdp2" required />
+
+
+            <div class="captcha-box">
+                <div class="captcha-lines">
+                    <p>8 3 1 9 4</p>
+                    <p>7 0 5 2 6</p>
+                </div>
+                <label for="capcha">Entrez le chiffre demandé</label>
+                <input type="text" maxlength="1" id="capcha"/>
+            </div>
+
+
+            <button type="submit" class="primary-btn full">S'inscrire</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

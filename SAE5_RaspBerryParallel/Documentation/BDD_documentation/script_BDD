@@ -1,0 +1,61 @@
+(requête SQL)                                                                                                                                                                                                                                            CREATE TABLE users (
+CREATE TABLE historique_e ( id_user SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    mdp VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE historique_e (
+    id_processus_e SERIAL PRIMARY KEY,
+    donnee_entree varchar(255)
+);
+
+CREATE TABLE historique_s (
+    id_processus_e SERIAL PRIMARY KEY,
+    donnee_sortie varchar(255)
+);
+
+
+CREATE TABLE historique (
+    id_historique SERIAL PRIMARY KEY,
+    id_user INTEGER NOT NULL,
+    id_processus_e INTEGER,
+    id_processus_s INTEGER,
+    nom_module VARCHAR(255),
+
+    FOREIGN KEY (id_user) REFERENCES user(id_user),
+    FOREIGN KEY (id_processus_e) REFERENCES historique_e(id_processus_e),
+    FOREIGN KEY (id_processus_s) REFERENCES historique_s(id_processus_s)
+);
+
+
+(requête db_io [le site pour généré le schéma relationnel])
+
+Table users {
+  id_user serial [primary key]
+  email VARCHAR(255) UNIQUE [NOT NULL]
+  mdp VARCHAR(255) [NOT NULL]
+}
+
+Table historique_entree {
+  id_processus_e serial [primary key]
+  donnee_entree varchar(255)
+}
+
+Table historique_sortie {
+  id_processus_s serial [primary key]
+  donnee_sortie varchar(255)
+}
+
+Table historique {
+  id_historique SERIAL [PRIMARY KEY]
+  id_user INTEGER [NOT NULL]
+  id_processus_e INTEGER
+  id_processus_s INTEGER
+  nom_module VARCHAR(255)
+
+}
+
+Ref:  users.id_user< historique.id_user
+
+Ref: historique_entree.id_processus_e < historique.id_processus_e
+Ref: historique_sortie.id_processus_s< historique.id_processus_s
